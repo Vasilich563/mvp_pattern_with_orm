@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1013</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Заказы</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../PPOIS_lab_4/gamedata/icons/bimer.jpg</normaloff>../../PPOIS_lab_4/gamedata/icons/bimer.jpg</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QToolTip {background-color: white; color: black; border: black solid 1px};</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 250, 230);</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="2">
+     <widget class="QPushButton" name="removeOrder">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>Отменить выбранный заказ, Shift -</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(224, 224, 255);</string>
+      </property>
+      <property name="text">
+       <string>Отменить заказ</string>
+      </property>
+      <property name="shortcut">
+       <string>Shift+-</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="2">
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 240, 254);</string>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustToContents</enum>
+      </property>
+      <property name="alternatingRowColors">
+       <bool>false</bool>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="textElideMode">
+       <enum>Qt::ElideMiddle</enum>
+      </property>
+      <property name="cornerButtonEnabled">
+       <bool>false</bool>
+      </property>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+      <row>
+       <property name="text">
+        <string>temp_temp</string>
+       </property>
+       <property name="background">
+        <color>
+         <red>181</red>
+         <green>181</green>
+         <blue>255</blue>
+        </color>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </property>
+      </row>
+      <column>
+       <property name="text">
+        <string>Время заказа</string>
+       </property>
+       <property name="background">
+        <color>
+         <red>181</red>
+         <green>181</green>
+         <blue>255</blue>
+        </color>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Заказчик</string>
+       </property>
+       <property name="background">
+        <color>
+         <red>181</red>
+         <green>181</green>
+         <blue>255</blue>
+        </color>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Адрес</string>
+       </property>
+       <property name="background">
+        <color>
+         <red>181</red>
+         <green>181</green>
+         <blue>255</blue>
+        </color>
+       </property>
+      </column>
+      <item row="0" column="0">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="background">
+        <brush brushstyle="NoBrush">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="NoBrush">
+         <color alpha="255">
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+        </brush>
+       </property>
+      </item>
+      <item row="0" column="1">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="background">
+        <brush brushstyle="NoBrush">
+         <color alpha="255">
+          <red>181</red>
+          <green>181</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </property>
+      </item>
+      <item row="0" column="2">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="background">
+        <brush brushstyle="NoBrush">
+         <color alpha="255">
+          <red>181</red>
+          <green>181</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="addOrder">
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>Создать новый заказ, Shift +</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(224, 224, 255);
+</string>
+      </property>
+      <property name="text">
+       <string>Новый заказ</string>
+      </property>
+      <property name="shortcut">
+       <string>Shift++</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" rowspan="2">
+     <widget class="QTabWidget" name="orders_widget">
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="documentMode">
+       <bool>false</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+      <property name="movable">
+       <bool>false</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="tab1">
+       <attribute name="title">
+        <string>Order_1</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="0">
+         <layout class="QGridLayout" name="tab1LayoutgridLayout">
+          <item row="2" column="4">
+           <widget class="QPushButton" name="rejectOrder">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(224, 224, 255);</string>
+            </property>
+            <property name="text">
+             <string>Отмена</string>
+            </property>
+            <property name="shortcut">
+             <string>Esc</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QPushButton" name="acceptOrder">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(224, 224, 255);</string>
+            </property>
+            <property name="text">
+             <string>Заказать</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="RemoveItem">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="toolTip">
+             <string>Убрать продукт из заказа, -</string>
+            </property>
+            <property name="toolTipDuration">
+             <number>5000</number>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(224, 224, 255);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../PPOIS_lab_4/gamedata/icons/minus.png</normaloff>../../PPOIS_lab_4/gamedata/icons/minus.png</iconset>
+            </property>
+            <property name="shortcut">
+             <string>-</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="addNewItem">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="toolTip">
+             <string>Добавить новый продукт в заказ, +</string>
+            </property>
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(224, 224, 255);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../PPOIS_lab_4/gamedata/icons/addIcon.png</normaloff>../../PPOIS_lab_4/gamedata/icons/addIcon.png</iconset>
+            </property>
+            <property name="shortcut">
+             <string>+</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="5">
+           <widget class="QTableWidget" name="orderItems">
+            <property name="cursor" stdset="0">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 240, 254);</string>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustToContents</enum>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::ExtendedSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="textElideMode">
+             <enum>Qt::ElideMiddle</enum>
+            </property>
+            <property name="verticalScrollMode">
+             <enum>QAbstractItemView::ScrollPerItem</enum>
+            </property>
+            <property name="gridStyle">
+             <enum>Qt::SolidLine</enum>
+            </property>
+            <property name="cornerButtonEnabled">
+             <bool>false</bool>
+            </property>
+            <attribute name="horizontalHeaderCascadingSectionResizes">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>false</bool>
+            </attribute>
+            <row>
+             <property name="text">
+              <string>temp</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="background">
+              <color>
+               <red>181</red>
+               <green>181</green>
+               <blue>255</blue>
+              </color>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Наименование товара</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="background">
+              <color>
+               <red>181</red>
+               <green>181</green>
+               <blue>255</blue>
+              </color>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Стоимость товара</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="background">
+              <color>
+               <red>181</red>
+               <green>181</green>
+               <blue>255</blue>
+              </color>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Количество</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="background">
+              <color>
+               <red>181</red>
+               <green>181</green>
+               <blue>255</blue>
+              </color>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Общая стоимость товара</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="background">
+              <color>
+               <red>181</red>
+               <green>181</green>
+               <blue>255</blue>
+              </color>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>temp</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="background">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>239</green>
+                <blue>255</blue>
+               </color>
+              </brush>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="0" column="1">
+             <property name="text">
+              <string>0.00</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="background">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>239</green>
+                <blue>255</blue>
+               </color>
+              </brush>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+             </property>
+            </item>
+            <item row="0" column="2">
+             <property name="text">
+              <string>0.00</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="background">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>239</green>
+                <blue>255</blue>
+               </color>
+              </brush>
+             </property>
+            </item>
+            <item row="0" column="3">
+             <property name="text">
+              <string>0.00</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+             <property name="background">
+              <brush brushstyle="SolidPattern">
+               <color alpha="255">
+                <red>239</red>
+                <green>239</green>
+                <blue>255</blue>
+               </color>
+              </brush>
+             </property>
+             <property name="flags">
+              <set>ItemIsSelectable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="3">
+           <widget class="QLineEdit" name="addressEdit">
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(224, 224, 255);</string>
+            </property>
+            <property name="inputMask">
+             <string/>
+            </property>
+            <property name="placeholderText">
+             <string>Введите адрес заказа...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QSpinBox" name="itemAmount">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="autoFillBackground">
+             <bool>true</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(224, 224, 255);</string>
+            </property>
+            <property name="wrapping">
+             <bool>false</bool>
+            </property>
+            <property name="frame">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3" colspan="2">
+           <widget class="QLabel" name="orderPrice">
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(224, 224, 255);</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="text">
+             <string>Итоговая стоимость: 0.00</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
